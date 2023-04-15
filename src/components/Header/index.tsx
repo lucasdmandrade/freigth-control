@@ -28,7 +28,7 @@ const Header = () => {
         </NavArea>
 
         <NavArea onClick={() => navigate("/professional")}>
-          <NavLink to="/professional">Profissional</NavLink>
+          <NavLink to="/formularios/caminhão">Cadastrar Caminhão</NavLink>
           <NavLinkUnderline isActive={location.pathname === "/professional"} />
         </NavArea>
 
