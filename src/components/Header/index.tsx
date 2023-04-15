@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <Container>
       <IconContainer>
-        <Icon height="80%" color="white" />
+        <Icon height="60%" color="white" />
       </IconContainer>
 
       <NavigationContainer>
@@ -27,9 +27,11 @@ const Header = () => {
           <NavLinkUnderline isActive={location.pathname === "/"} />
         </NavArea>
 
-        <NavArea onClick={() => navigate("/professional")}>
+        <NavArea onClick={() => navigate("/formularios/caminhão")}>
           <NavLink to="/formularios/caminhão">Cadastrar Caminhão</NavLink>
-          <NavLinkUnderline isActive={location.pathname === "/professional"} />
+          <NavLinkUnderline
+            isActive={location.pathname === "/formularios/caminhão"}
+          />
         </NavArea>
 
         <NavArea onClick={() => navigate("/emulador")}>

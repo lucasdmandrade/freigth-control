@@ -17,18 +17,6 @@ export const ImageContainer = styled.figure`
   background-size: 100vw;
 `;
 
-export const FormCard = styled.form`
-  display: flex;
-  flex-direction: column;
-  background-color: #dedede;
-
-  opacity: 0.9;
-
-  border-radius: 20px;
-
-  padding: 25px;
-`;
-
 export const FormHeader = styled.header`
   display: flex;
   margin-bottom: 15px;

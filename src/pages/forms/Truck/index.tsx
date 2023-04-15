@@ -1,8 +1,8 @@
+import Form from "../../../components/Form";
 import Header from "../../../components/Header";
 import {
   Container,
   FormButton,
-  FormCard,
   FormFooter,
   FormHeader,
   FormInput,
@@ -16,7 +16,7 @@ const Truck = () => {
       <Header />
 
       <ImageContainer>
-        <FormCard>
+        <Form>
           <FormHeader>
             <FormTitle>Cadastre seu caminhão</FormTitle>
           </FormHeader>
@@ -29,7 +29,7 @@ const Truck = () => {
           <FormFooter>
             <FormButton>Cadastrar</FormButton>
           </FormFooter>
-        </FormCard>
+        </Form>
       </ImageContainer>
     </Container>
   );
