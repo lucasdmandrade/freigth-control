@@ -11,7 +11,7 @@ export const ImageContainer = styled.figure`
   align-items: center;
   justify-content: center;
 
-  background-image: url("https://img.freepik.com/fotos-premium/caminhao-amarelo-em-uma-estrada-no-inicio-da-primavera_470606-202.jpg?w=2000");
+  background-image: url("https://img.freepik.com/fotos-premium/seu-pacote-esta-a-caminho-com-seguranca-foto-recortada-de-um-mensageiro-nao-identificavel-preenchendo-a-papelada-durante-uma-entrega_590464-20819.jpg?w=2000");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100vw;
@@ -52,4 +52,8 @@ export const FormButton = styled.button`
   border-radius: 5px;
   padding: 5px;
   width: 80%;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
