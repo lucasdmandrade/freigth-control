@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.main``;
 
-export const ImageContainer = styled.figure`
+export const ContainerWithImage = styled.figure`
   width: 100vw;
   max-width: 100vw;
   height: 100vh;
@@ -11,10 +11,12 @@ export const ImageContainer = styled.figure`
   align-items: center;
   justify-content: center;
 
-  background-image: url("https://img.freepik.com/fotos-premium/caminhao-amarelo-em-uma-estrada-no-inicio-da-primavera_470606-202.jpg?w=2000");
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: url("https://thumbs.dreamstime.com/b/homem-novo-dos-imigrantes-bem-vindos-dos-clientes-do-cliente-do-refugiado-dos-refugiados-82553651.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100vw;
+  background-blend-mode: darken;
 `;
 
 export const FormHeader = styled.header`

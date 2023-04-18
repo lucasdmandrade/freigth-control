@@ -7,7 +7,7 @@ import {
   FormHeader,
   FormInput,
   FormTitle,
-  ImageContainer,
+  ContainerWithImage,
 } from "./styles";
 
 const Freight = () => {
@@ -15,22 +15,24 @@ const Freight = () => {
     <Container>
       <Header />
 
-      <ImageContainer>
+      <ContainerWithImage>
         <Form>
           <FormHeader>
             <FormTitle>Cadastre sua carga</FormTitle>
           </FormHeader>
 
-          <FormInput placeholder="Modelo" />
-          <FormInput placeholder="Placa" />
-          <FormInput placeholder="Ano" />
-          <FormInput placeholder="Peso maximo" />
+          <FormInput placeholder="Nome" />
+          <FormInput placeholder="Altura" />
+          <FormInput placeholder="Largura" />
+          <FormInput placeholder="Comprimento" />
+          <FormInput placeholder="Peso" />
+          <FormInput placeholder="Tipo de carga" />
 
           <FormFooter>
             <FormButton>Cadastrar</FormButton>
           </FormFooter>
         </Form>
-      </ImageContainer>
+      </ContainerWithImage>
     </Container>
   );
 };

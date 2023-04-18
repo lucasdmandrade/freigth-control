@@ -7,7 +7,7 @@ import {
   FormHeader,
   FormInput,
   FormTitle,
-  ImageContainer,
+  ContainerWithImage,
 } from "./styles";
 
 const User = () => {
@@ -15,22 +15,25 @@ const User = () => {
     <Container>
       <Header />
 
-      <ImageContainer>
+      <ContainerWithImage>
         <Form>
           <FormHeader>
-            <FormTitle>Cadastre sua carga</FormTitle>
+            <FormTitle>Cadastre novo cliente</FormTitle>
           </FormHeader>
 
-          <FormInput placeholder="Modelo" />
-          <FormInput placeholder="Placa" />
-          <FormInput placeholder="Ano" />
-          <FormInput placeholder="Peso maximo" />
+          <FormInput placeholder="Nome" />
+          <FormInput placeholder="Usuario" />
+          <FormInput placeholder="Email" />
+          <FormInput type={"password"} placeholder="Senha" />
+          <FormInput type={"tel"} placeholder="Numero de telefone" />
+          <FormInput placeholder="CPF/CNPJ" />
+          <FormInput placeholder="Tipo de usuario" />
 
           <FormFooter>
             <FormButton>Cadastrar</FormButton>
           </FormFooter>
         </Form>
-      </ImageContainer>
+      </ContainerWithImage>
     </Container>
   );
 };

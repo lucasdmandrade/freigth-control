@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.main``;
 
-export const ImageContainer = styled.figure`
+export const ContainerWithImage = styled.figure`
   width: 100vw;
   max-width: 100vw;
   height: 100vh;
