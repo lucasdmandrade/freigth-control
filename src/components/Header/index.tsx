@@ -1,51 +1,30 @@
 import Icon from "../../assets/icons/Logo";
 
-import {
-  Container,
-  IconContainer,
-  LogoImg,
-  NavArea,
-  NavigationContainer,
-  NavLink,
-  NavLinkUnderline,
-} from "./styles";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Container, IconContainer, NavigationContainer } from "./styles";
+import NavigationButton from "./components/NavigationButton";
 
-const Header = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+const Header = () => (
+  <Container>
+    <IconContainer>
+      <Icon height="60%" color="white" />
+    </IconContainer>
 
-  return (
-    <Container>
-      <IconContainer>
-        <Icon height="60%" color="white" />
-      </IconContainer>
+    <NavigationContainer>
+      <NavigationButton route="/home" title="Home" />
 
-      <NavigationContainer>
-        <NavArea onClick={() => navigate("/")}>
-          <NavLink to="/">Home</NavLink>
-          <NavLinkUnderline isActive={location.pathname === "/"} />
-        </NavArea>
+      <NavigationButton
+        route="/formularios/caminhao"
+        title="Cadastrar Caminhão"
+      />
 
-        <NavArea onClick={() => navigate("/formularios/caminhão")}>
-          <NavLink to="/formularios/caminhão">Cadastrar Caminhão</NavLink>
-          <NavLinkUnderline
-            isActive={location.pathname === "/formularios/caminhão"}
-          />
-        </NavArea>
+      <NavigationButton route="/formularios/pacote" title="Cadastrar Pacote" />
 
-        <NavArea onClick={() => navigate("/emulador")}>
-          <NavLink to="/emulador">Emulador</NavLink>
-          <NavLinkUnderline isActive={location.pathname === "/emulador"} />
-        </NavArea>
-
-        <NavArea onClick={() => navigate("/curriculum")}>
-          <NavLink to="/curriculum">Currículo</NavLink>
-          <NavLinkUnderline isActive={location.pathname === "/curriculum"} />
-        </NavArea>
-      </NavigationContainer>
-    </Container>
-  );
-};
+      <NavigationButton
+        route="/formularios/cliente"
+        title="Cadastrar Cliente"
+      />
+    </NavigationContainer>
+  </Container>
+);
 
 export default Header;

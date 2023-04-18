@@ -10,7 +10,7 @@ import {
   ImageContainer,
 } from "./styles";
 
-const Freight = () => {
+const User = () => {
   return (
     <Container>
       <Header />
@@ -35,4 +35,4 @@ const Freight = () => {
   );
 };
 
-export default Freight;
+export default User;

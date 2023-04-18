@@ -20,8 +20,14 @@ import {
   TitleContainer,
   TruckImage,
 } from "./styles";
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const goTo = useCallback(() => navigate("/home"), []);
+
   return (
     <MainContainer>
       <ImageContainer>
@@ -57,7 +63,7 @@ const Login = () => {
           <ResetPasswordButton>Esqueci minha senha</ResetPasswordButton>
         </AccountActions>
 
-        <LoginButon>Login</LoginButon>
+        <LoginButon onClick={goTo}>Login</LoginButon>
       </LoginContent>
     </MainContainer>
   );
