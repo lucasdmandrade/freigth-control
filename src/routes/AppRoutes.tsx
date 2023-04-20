@@ -5,6 +5,7 @@ import TruckForm from "../pages/forms/Truck";
 import Home from "../pages/Home";
 import FreightForm from "../pages/forms/Freight";
 import UserForm from "../pages/forms/User";
+import SquireFreight from "../pages/SquireFreight";
 
 const AppRoutes = () => {
   return (
@@ -12,6 +13,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/acompanhar-carga" element={<SquireFreight />} />
         <Route path="/formularios/caminhao" element={<TruckForm />} />
         <Route path="/formularios/pacote" element={<FreightForm />} />
         <Route path="/formularios/cliente" element={<UserForm />} />

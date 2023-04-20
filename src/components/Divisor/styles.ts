@@ -20,7 +20,7 @@ export const Divisor = styled.hr<{
   height: ${({ height }) => (height ? height : "0px")};
   background-color: ${({ backgroundColor }) =>
     backgroundColor ? backgroundColor : "black"};
-  margin: ${({ removeMargin }) => (removeMargin ? 0 : "30px 0 15px 0")};
+  margin: ${({ removeMargin }) => (removeMargin ? 0 : "30px 15px")};
   border-color: ${({ color }) => color};
   border: ${({ removeBorder }) => removeBorder && "none"};
 `;

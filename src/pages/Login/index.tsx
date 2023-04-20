@@ -31,7 +31,7 @@ const Login = () => {
   return (
     <MainContainer>
       <ImageContainer>
-        <TruckImage src={TrucksImage} />
+        <TruckImage src={TrucksImage} alt="TrasnCargo logo" />
       </ImageContainer>
 
       <LoginContent>
