@@ -139,6 +139,11 @@ export const LoginButon = styled.button`
   font-weight: 800;
   font-size: 18px;
   color: #ffffff;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(120%);
+  }
 `;
 
 export const ResetPasswordButton = styled.button`

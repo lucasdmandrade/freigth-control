@@ -11,10 +11,12 @@ export const ContainerWithImage = styled.figure`
   align-items: center;
   justify-content: center;
 
+  background-color: rgba(0, 0, 0, 0.2);
   background-image: url("https://img.freepik.com/fotos-premium/caminhao-amarelo-em-uma-estrada-no-inicio-da-primavera_470606-202.jpg?w=2000");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100vw;
+  background-blend-mode: darken;
 `;
 
 export const FormHeader = styled.header`

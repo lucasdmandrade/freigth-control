@@ -11,7 +11,7 @@ export const ContainerWithImage = styled.figure`
   align-items: center;
   justify-content: center;
 
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
   background-image: url("https://thumbs.dreamstime.com/b/homem-novo-dos-imigrantes-bem-vindos-dos-clientes-do-cliente-do-refugiado-dos-refugiados-82553651.jpg");
   background-repeat: no-repeat;
   background-position: center;
