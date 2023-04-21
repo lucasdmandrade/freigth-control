@@ -1,15 +1,21 @@
 import Header from "../../components/Header";
-import MainContainer from "../../components/MainContainer";
-import { ImageContainer, Title } from "./styles";
+import { Button, Description, HomePageContainer, Logo, Title } from "./styles";
 
-const Home = () => {
+import LogoImage from "../../assets/images/Logo.png";
+
+const Home: React.FC = () => {
   return (
-    <MainContainer>
+    <HomePageContainer>
       <Header />
-      <ImageContainer>
-        <Title>Rápido e confiável, entregamos seu sonho em suas mãos!</Title>
-      </ImageContainer>
-    </MainContainer>
+      <Logo src={LogoImage} alt="TransCargo Logo" />
+      <Title>Transporte de carga seguro e confiável</Title>
+      <Description>
+        A TransCargo é uma empresa de transporte de carga que oferece soluções
+        seguras e confiáveis para atender às necessidades logísticas dos nossos
+        clientes em todo o mundo.
+      </Description>
+      <Button>Entre em contato</Button>
+    </HomePageContainer>
   );
 };
 
