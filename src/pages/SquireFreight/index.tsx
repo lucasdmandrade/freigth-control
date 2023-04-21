@@ -1,14 +1,14 @@
 import Logo from "../../assets/icons/Logo";
+import Circle from "../../assets/icons/Circle";
+import CheckedCircle from "../../assets/icons/CheckedCircle";
 import { Divisor } from "../../components/Divisor/styles";
 
 import Header from "../../components/Header";
 import {
-  Circle,
   Container,
   FreightContainer,
   FreightHalt,
   FreightHaltDescription,
-  HoundedCircle,
 } from "./styles";
 
 const SquireFreight = () => {
@@ -17,7 +17,7 @@ const SquireFreight = () => {
       <Header />
       <FreightContainer>
         <FreightHalt>
-          <Circle />
+          <CheckedCircle width={50} height={50} />
           <FreightHaltDescription>Teste</FreightHaltDescription>
         </FreightHalt>
 
@@ -31,7 +31,7 @@ const SquireFreight = () => {
         <Divisor width="50px" color="#525252" />
 
         <FreightHalt>
-          <HoundedCircle />
+          <Circle width={50} height={50} />
           <FreightHaltDescription>Teste</FreightHaltDescription>
         </FreightHalt>
       </FreightContainer>
