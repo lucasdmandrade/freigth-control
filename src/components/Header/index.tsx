@@ -12,6 +12,8 @@ const Header = () => (
     <NavigationContainer>
       <NavigationButton route="/home" title="Home" />
 
+      <NavigationButton route="/acompanhar-carga" title="Buscar Pedido" />
+
       <NavigationButton
         route="/formularios/caminhao"
         title="Cadastrar Caminhão"
