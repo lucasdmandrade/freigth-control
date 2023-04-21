@@ -2,8 +2,17 @@ import Header from "../../components/Header";
 import { Button, Description, HomePageContainer, Logo, Title } from "./styles";
 
 import LogoImage from "../../assets/images/Logo.png";
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
+
+  const goToRegisterPackage = useCallback(
+    () => navigate("/formularios/pacote"),
+    [navigate]
+  );
+
   return (
     <HomePageContainer>
       <Header />
@@ -14,7 +23,7 @@ const Home: React.FC = () => {
         seguras e confiáveis para atender às necessidades logísticas dos nossos
         clientes em todo o mundo.
       </Description>
-      <Button>Entre em contato</Button>
+      <Button onClick={goToRegisterPackage}>Cadastrar pacote</Button>
     </HomePageContainer>
   );
 };

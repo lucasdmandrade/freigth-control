@@ -26,7 +26,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
 
-  const goTo = useCallback(() => navigate("/home"), []);
+  const goTo = useCallback(() => navigate("/home"), [navigate]);
 
   return (
     <MainContainer>
