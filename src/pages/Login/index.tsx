@@ -22,9 +22,13 @@ import {
 } from "./styles";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { DoLogin } from "../../api/Auth/Login";
+import { fetchAllCities } from "../../api/Location/City";
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const test = DoLogin();
 
   const goTo = useCallback(() => navigate("/home"), [navigate]);
 
@@ -63,7 +67,7 @@ const Login = () => {
           <ResetPasswordButton>Esqueci minha senha</ResetPasswordButton>
         </AccountActions>
 
-        <LoginButon onClick={goTo}>Login</LoginButon>
+        <LoginButon onClick={fetchAllCities}>Login</LoginButon>
       </LoginContent>
     </MainContainer>
   );
