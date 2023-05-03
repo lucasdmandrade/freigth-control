@@ -20,17 +20,23 @@ import {
   TitleContainer,
   TruckImage,
 } from "./styles";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DoLogin } from "../../api/Auth/Login";
-import { fetchAllCities } from "../../api/Location/City";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
   const navigate = useNavigate();
 
-  const test = DoLogin();
-
-  const goTo = useCallback(() => navigate("/home"), [navigate]);
+  const goTo = useCallback(() => {
+    DoLogin(username, password)
+      .then((response) => {
+        if (response.code === 200) navigate("/home");
+      })
+      .catch((error) => console.log("error", error.message));
+  }, [navigate, password, username]);
 
   return (
     <MainContainer>
@@ -50,12 +56,18 @@ const Login = () => {
 
         <InputContainer>
           <FormInputLabel>Email</FormInputLabel>
-          <FormInput type="email" />
+          <FormInput
+            type="email"
+            onChange={({ target }) => setUsername(target.value)}
+          />
         </InputContainer>
 
         <InputContainer>
           <FormInputLabel>Senha</FormInputLabel>
-          <FormInput type="password" />
+          <FormInput
+            type="password"
+            onChange={({ target }) => setPassword(target.value)}
+          />
         </InputContainer>
 
         <AccountActions>
@@ -67,7 +79,7 @@ const Login = () => {
           <ResetPasswordButton>Esqueci minha senha</ResetPasswordButton>
         </AccountActions>
 
-        <LoginButon onClick={fetchAllCities}>Login</LoginButon>
+        <LoginButon onClick={goTo}>Login</LoginButon>
       </LoginContent>
     </MainContainer>
   );

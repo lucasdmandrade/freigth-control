@@ -1,20 +1,14 @@
 import api from "../../../axios";
+import { LoginResponse } from "./types";
 
-export const DoLogin = async () => {
-  let data;
-
-  await api
-    .post("/login", {
-      username: "admin@email.com",
-      password: "1234",
-    })
-    .then((response) => {
-      data = response;
-    })
-    .catch((error) => {
-      data = error;
-      console.log("error", error);
-    });
+export const DoLogin = async (
+  username: string,
+  password: string
+): Promise<LoginResponse> => {
+  let data: LoginResponse = await api.post<LoginResponse>("/login", {
+    username,
+    password,
+  });
 
   return data;
 };
