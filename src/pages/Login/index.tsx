@@ -23,6 +23,8 @@ import {
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DoLogin } from "../../api/Auth/Login";
+import { ResponseCode } from "../../utils/enuns/ResponseCodes";
+import SaveToken from "../../utils/SaveToken";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -30,13 +32,20 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const goTo = useCallback(() => {
+  const goToHome = useCallback(() => {
+    navigate("/home");
+  }, [navigate]);
+
+  const signIn = useCallback(() => {
     DoLogin(username, password)
       .then((response) => {
-        if (response.code === 200) navigate("/home");
+        if (response.code === ResponseCode.SUCCESS) {
+          SaveToken(response.data.token);
+          goToHome();
+        }
       })
       .catch((error) => console.log("error", error.message));
-  }, [navigate, password, username]);
+  }, [goToHome, password, username]);
 
   return (
     <MainContainer>
@@ -79,7 +88,7 @@ const Login = () => {
           <ResetPasswordButton>Esqueci minha senha</ResetPasswordButton>
         </AccountActions>
 
-        <LoginButon onClick={goTo}>Login</LoginButon>
+        <LoginButon onClick={signIn}>Login</LoginButon>
       </LoginContent>
     </MainContainer>
   );

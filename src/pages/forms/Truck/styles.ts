@@ -41,6 +41,16 @@ export const FormInput = styled.input`
   margin-top: 10px;
 `;
 
+export const FormSelector = styled.select`
+  padding: 13px 10px;
+
+  border: 1px solid #ded2d9;
+  border-radius: 5px;
+  margin-top: 10px;
+`;
+
+export const FormOption = styled.option``;
+
 export const FormFooter = styled.footer`
   display: flex;
   margin-top: 15px;
