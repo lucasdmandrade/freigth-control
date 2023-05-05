@@ -33,6 +33,16 @@ const Freight = () => {
   );
 
   const submitForm = useCallback(() => {
+    if (
+      !freightName ||
+      !freightHeight ||
+      !freightBreadth ||
+      !freightLength ||
+      !freightWeight ||
+      !freightType
+    )
+      return;
+
     RegisterCargo(
       freightName,
       freightHeight,
@@ -93,7 +103,7 @@ const Freight = () => {
           </FormSelector>
 
           <FormFooter>
-            <FormButton>Cadastrar</FormButton>
+            <FormButton onClick={submitForm}>Cadastrar</FormButton>
           </FormFooter>
         </Form>
       </ContainerWithImage>
