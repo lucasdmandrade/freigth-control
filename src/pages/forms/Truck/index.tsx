@@ -1,8 +1,8 @@
 import { useCallback, useState } from "react";
 import { RegisterTruck } from "../../../api/Truck";
-import { TruckStates } from "../../../api/utils/TruckStates";
 import Form from "../../../components/Form";
 import Header from "../../../components/Header";
+import { TruckStates } from "../../../utils/enuns/States";
 import {
   Container,
   FormButton,
