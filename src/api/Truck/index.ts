@@ -1,4 +1,5 @@
 import api from "../../axios";
+import GetTOken from "../../utils/GetToken";
 
 export const RegisterTruck = async (
   model: string,
@@ -7,13 +8,24 @@ export const RegisterTruck = async (
   maxWeight: number,
   statusId: number
 ) => {
-  let data = await api.post("/truck", {
-    model,
-    plate,
-    year,
-    maxWeight,
-    statusId,
-  });
+  const Authorization = `Bearer ${GetTOken()}`;
+  console.log(test);
+  let data = await api.post(
+    "/truck",
+    {
+      model,
+      plate,
+      year,
+      maxWeight,
+      statusId,
+    },
+    {
+      headers: {
+        Authorization: Authorization,
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
   return data;
 };

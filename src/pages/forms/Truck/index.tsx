@@ -20,7 +20,7 @@ const Truck = () => {
   const [plate, setPlate] = useState("");
   const [year, setYear] = useState<number>();
   const [maxWeight, setMaxWeight] = useState<number>();
-  const [truckState, setTruckState] = useState<number>();
+  const [truckState, setTruckState] = useState<number>(1);
 
   const ListOptions = () => {
     const FormOptionsGroup = [];
@@ -28,20 +28,27 @@ const Truck = () => {
 
     for (let i = 1; i <= truckStatesQuantity; i++) {
       FormOptionsGroup.push(
-        <FormOption key={TruckStates[i]}>{TruckStates[i]}</FormOption>
+        <FormOption value={i} key={TruckStates[i]}>
+          {TruckStates[i]}
+        </FormOption>
       );
     }
 
     return FormOptionsGroup;
   };
 
-  const submit = useCallback(() => {
+  const submitForm = useCallback(() => {
+    console.log("values", maxWeight, model, plate, truckState, year);
+    window.alert("f");
+
     if (!year || !maxWeight || !truckState) return;
+
     RegisterTruck(model, plate, year, maxWeight, truckState)
       .then((response) => {
-        console.log("foi");
+        window.alert(response);
+        console.log("foi", response);
       })
-      .catch((error) => console.log("error", error.message));
+      .catch((error) => window.alert(error.message));
   }, [maxWeight, model, plate, truckState, year]);
 
   return (
@@ -79,7 +86,7 @@ const Truck = () => {
           </FormSelector>
 
           <FormFooter>
-            <FormButton onClick={submit}>Cadastrar</FormButton>
+            <FormButton onClick={submitForm}>Cadastrar</FormButton>
           </FormFooter>
         </Form>
       </ContainerWithImage>
