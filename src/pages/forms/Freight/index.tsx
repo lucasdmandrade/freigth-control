@@ -56,7 +56,14 @@ const Freight = () => {
         console.log("foi", response);
       })
       .catch((error) => window.alert(error.message));
-  }, []);
+  }, [
+    freightBreadth,
+    freightHeight,
+    freightLength,
+    freightName,
+    freightType,
+    freightWeight,
+  ]);
 
   return (
     <Container>
