@@ -79,30 +79,35 @@ const Freight = () => {
             placeholder="Nome"
             onChange={({ target }) => setFreightName(target.value)}
           />
+
           <FormInput
             placeholder="Altura"
             onChange={({ target }) =>
               setFreightHeight(parseFloat(target.value))
             }
           />
+
           <FormInput
             placeholder="Largura"
             onChange={({ target }) =>
               setFreightBreadth(parseFloat(target.value))
             }
           />
+
           <FormInput
             placeholder="Comprimento"
             onChange={({ target }) =>
               setFreightLength(parseFloat(target.value))
             }
           />
+
           <FormInput
             placeholder="Peso"
             onChange={({ target }) =>
               setFreightWeight(parseFloat(target.value))
             }
           />
+
           <FormSelector
             onChange={({ target }) => setFreightType(parseInt(target.value))}
           >

@@ -14,3 +14,9 @@ export enum FreightTypes {
   "Carga Pesada",
   "Carga Muito Pesada",
 }
+
+export enum UserGroups {
+  Administrador = 1,
+  Motorista = 2,
+  Cliente = 3,
+}

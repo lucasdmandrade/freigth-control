@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import { RegisterTruck } from "../../../api/Truck";
 import Form from "../../../components/Form";
 import Header from "../../../components/Header";
+import { ListEnum } from "../../../utils/enuns/Methods";
 import { TruckStates } from "../../../utils/enuns/States";
 import {
   Container,
@@ -22,20 +23,14 @@ const Truck = () => {
   const [maxWeight, setMaxWeight] = useState<number>();
   const [truckState, setTruckState] = useState<number>(1);
 
-  const ListOptions = () => {
-    const FormOptionsGroup = [];
-    const truckStatesQuantity = Object.keys(TruckStates).length / 2;
-
-    for (let i = 1; i <= truckStatesQuantity; i++) {
-      FormOptionsGroup.push(
-        <FormOption value={i} key={TruckStates[i]}>
-          {TruckStates[i]}
-        </FormOption>
-      );
-    }
-
-    return FormOptionsGroup;
-  };
+  const handleOptions = useCallback(
+    (name: string, index: number) => (
+      <FormOption value={index} key={name}>
+        {name}
+      </FormOption>
+    ),
+    []
+  );
 
   const submitForm = useCallback(() => {
     console.log("values", maxWeight, model, plate, truckState, year);
@@ -82,7 +77,7 @@ const Truck = () => {
             id="status"
             onChange={({ target }) => setTruckState(parseInt(target.value))}
           >
-            {ListOptions()}
+            {ListEnum(TruckStates, handleOptions)}
           </FormSelector>
 
           <FormFooter>
