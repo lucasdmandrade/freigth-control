@@ -1,5 +1,5 @@
-const GetTOken = () => {
+const GetToken = () => {
   return localStorage.getItem("token");
 };
 
-export default GetTOken;
+export default GetToken;

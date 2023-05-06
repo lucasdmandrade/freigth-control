@@ -1,5 +1,5 @@
 import api from "../../axios";
-import GetTOken from "../../utils/GetToken";
+import GetToken from "../../utils/GetToken";
 
 export const RegisterCargo = async (
   name: string,
@@ -11,7 +11,7 @@ export const RegisterCargo = async (
 ) => {
   const data = { name, sizeX, sizeY, sizeZ, weight, typeId };
 
-  const Authorization = `Bearer ${GetTOken()}`;
+  const Authorization = `Bearer ${GetToken()}`;
   const config = {
     headers: {
       Authorization: Authorization,
