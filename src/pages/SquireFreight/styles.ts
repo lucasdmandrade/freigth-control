@@ -20,6 +20,7 @@ export const FreightSearchContainer = styled.section`
 
 export const SearchInput = styled.input`
   padding: 13px 10px;
+  margin-right: 25px;
 
   border: 1px solid #ded2d9;
   border-radius: 5px;

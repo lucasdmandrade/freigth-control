@@ -13,13 +13,40 @@ import {
   FreightSearchContainer,
   SearchInput,
 } from "./styles";
+import { useCallback, useEffect, useState } from "react";
+import MainButton from "../../components/MainButton";
+import { fetchCargo } from "../../api/Cargo";
+import { CargoInfo } from "../../api/Cargo/types";
 
 const SquireFreight = () => {
+  const [freightId, setFreightId] = useState<number>();
+  const [freightData, setFreightData] = useState<CargoInfo>();
+
+  const fetch = useCallback(() => {
+    if (!freightId) return;
+
+    fetchCargo(freightId)
+      .then((response) => {
+        setFreightData(response.data.info);
+      })
+      .catch((error) => console.log("error", error.message));
+  }, [freightId]);
+
+  useEffect(() => {
+    console.log("freightData: ", freightData);
+  }, [freightData]);
+
   return (
     <Container>
       <Header />
       <FreightSearchContainer>
-        <SearchInput placeholder="Digite o código do pedido" />
+        <SearchInput
+          onChange={({ target }) => setFreightId(parseInt(target.value))}
+          placeholder="Digite o código do pedido"
+        />
+        <MainButton onClick={fetch} width="7rem">
+          Buscar
+        </MainButton>
       </FreightSearchContainer>
 
       <FreightContainer>

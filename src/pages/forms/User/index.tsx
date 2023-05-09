@@ -49,7 +49,10 @@ const User = () => {
         window.alert(response);
         console.log("foi", response);
       })
-      .catch((error) => window.alert(error.message));
+      .catch((error) => window.alert(error.message))
+      .finally(() => {
+        window.alert("aoba");
+      });
   }, [
     userDocument,
     userEmail,
