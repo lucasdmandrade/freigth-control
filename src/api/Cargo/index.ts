@@ -25,12 +25,12 @@ export const RegisterCargo = async (
 
 export const fetchCargo = async (id: number) => {
   const Authorization = `Bearer ${GetToken()}`;
-  const config = {
+
+  const query = {
     headers: {
       Authorization: Authorization,
-      "Content-Type": "application/json",
     },
   };
 
-  return await api.get<CargoResponse>(`/cargo/`, { id, config });
+  return await api.get<CargoResponse>(`/cargo/${id}`, query);
 };

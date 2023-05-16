@@ -33,8 +33,8 @@ const SquireFreight = () => {
   }, [freightId]);
 
   useEffect(() => {
-    console.log("freightData: ", freightData);
-  }, [freightData]);
+    console.log("freightId: ", freightId);
+  }, [freightId]);
 
   return (
     <Container>
