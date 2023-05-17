@@ -12,8 +12,11 @@ class Api {
     this.client = axios.create(config);
   }
 
-  async get<T>(url: string, params?: object): Promise<T> {
-    const response: AxiosResponse<T> = await this.client.get(url, { params });
+  async get<T>(url: string, params?: object, headers?: object): Promise<T> {
+    const response: AxiosResponse<T> = await this.client.get(url, {
+      params,
+      headers,
+    });
     return response.data;
   }
 
