@@ -2,6 +2,7 @@ import Logo from "../../assets/icons/Logo";
 import Check from "../../assets/icons/Check";
 import CheckedCircle from "../../assets/icons/CheckedCircle";
 import { Divisor } from "../../components/Divisor/styles";
+import "react-toastify/dist/ReactToastify.css";
 
 import Header from "../../components/Header";
 import {
@@ -17,6 +18,8 @@ import { useCallback, useEffect, useState } from "react";
 import MainButton from "../../components/MainButton";
 import { fetchCargo } from "../../api/Cargo";
 import { CargoInfo } from "../../api/Cargo/types";
+import { toast, ToastContainer } from "react-toastify";
+import { successToast } from "../../utils/toastConfigs";
 
 const SquireFreight = () => {
   const [freightId, setFreightId] = useState<number>();
@@ -26,10 +29,11 @@ const SquireFreight = () => {
     if (!freightId) return;
 
     fetchCargo(freightId)
-      .then((response) => {
-        setFreightData(response.data.info);
+      .then(({ data }) => {
+        console.log("response", data);
+        setFreightData(data.info);
       })
-      .catch((error) => console.log("error", error.message));
+      .catch(({ response }) => toast(response.data.message, successToast));
   }, [freightId]);
 
   useEffect(() => {
@@ -38,6 +42,19 @@ const SquireFreight = () => {
 
   return (
     <Container>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
+
       <Header />
       <FreightSearchContainer>
         <SearchInput
