@@ -19,7 +19,7 @@ import MainButton from "../../components/MainButton";
 import { fetchCargo } from "../../api/Cargo";
 import { CargoInfo } from "../../api/Cargo/types";
 import { toast, ToastContainer } from "react-toastify";
-import { successToast } from "../../utils/toastConfigs";
+import { errorToast, successToast } from "../../utils/toastConfigs";
 
 const SquireFreight = () => {
   const [freightId, setFreightId] = useState<number>();
@@ -33,7 +33,7 @@ const SquireFreight = () => {
         console.log("response", data);
         setFreightData(data.info);
       })
-      .catch(({ response }) => toast(response.data.message, successToast));
+      .catch(({ response }) => toast(response.data.message, errorToast));
   }, [freightId]);
 
   useEffect(() => {
